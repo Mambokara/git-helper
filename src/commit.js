@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 
 function formatFileNames(fileNames) {
-    return fileNames.map((file) => file.replace(/[^a-zA-Z0-9.\-_]/g, '')).join('&&');
+    return fileNames.map((file) => file.replace(/[^a-zA-Z0-9.\-_]/g, '')).join(' && ');
 }
 
 async function loadCommitHistory() {
