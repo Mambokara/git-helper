@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 
 function formatFileNames(fileNames) {
-    return fileNames.map((file) => file.replace(/[^a-zA-Z0-9.\-_]/g, '')).join(' && ');
+    return fileNames.map((file) => file.replace(/[^a-zA-Z0-9.-_]/g, '')).join(' && ');
 }
 
 async function loadCommitHistory() {
@@ -50,8 +50,8 @@ async function chooseCommitType() {
                 { name: 'test: Ajout ou modification de tests', value: 'test ' },
                 { name: 'chore: Autres tâches (ex. build)', value: 'chore ' },
                 { name: 'remove: Retire un ou plusieurs fichiers', value: 'remove ' },
-                { name: 'codding-style: Changement d\'erreur codding style', value: "codding-style"},
-                { name: 'merge: Corrige un merge', value: "merge"},
+                { name: 'codding-style: Changement d\'erreur codding style', value: "codding-style" },
+                { name: 'merge: Corrige un merge', value: "merge" },
             ],
             prefix: '',
         }
